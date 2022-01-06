@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./login-card.module.css"
 
 
-export default function LoginCard(){
+export default function LoginCard({ login, mail, setMail, password, setPassword }){
     return(
         <>
         <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -17,7 +17,7 @@ export default function LoginCard(){
               </a>
             </p>
           </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
+          <form className="mt-8 space-y-6" action="#" method="POST" onSubmit={login}>
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
@@ -32,6 +32,8 @@ export default function LoginCard(){
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Email address"
+                  value={mail}
+                  onInput={e => setMail(e.target.value)}
                 />
               </div>
               <div>
@@ -46,6 +48,8 @@ export default function LoginCard(){
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Password"
+                  value={password}
+                  onInput={e => setPassword(e.target.value)}
                 />
               </div>
             </div>

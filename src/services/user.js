@@ -1,0 +1,17 @@
+import axios from "axios";
+import { API_URL } from "../config";
+
+export function getAccessToken(mail, password)
+{
+    return axios.post(API_URL + "/auth/login", {mail, password})
+    .then(res => res.data)
+}
+
+export function getUserProfile(token)
+{
+    const config = {
+        headers: { Authorization: `Bearer ${token}` }
+    };
+    return axios.get(API_URL + "/users/profile", config)
+    .then(res => res.data)
+}
