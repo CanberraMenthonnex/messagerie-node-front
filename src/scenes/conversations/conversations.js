@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react/cjs/react.development";
 import { DangerAlert } from "../../components/alerts/danger";
+import { ConversationBody } from "../../components/conversations/body";
 import { ConversationItem } from "../../components/conversations/item";
 import { NewConversationModal } from "../../components/conversations/new";
 import { useTempError } from "../../hooks/useTempError";
@@ -95,7 +96,7 @@ export default function Conversations() {
                     }
                 </header>
                 <div className={styles.chatBody}>
-
+                    <ConversationBody messages={[]} />
                 </div>
                 {
                     currentConversation && (
