@@ -3,6 +3,7 @@ import { useAuth } from "../../stores/auth";
 import LoginCard from "../../components/cards/login-card/login-card";
 import { getAccessToken, getUserProfile } from "../../services/user";
 import Styles from "./login.module.css";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Login(){
@@ -11,11 +12,15 @@ export default function Login(){
     const [mail, setMail] = useState('')
     const [password, setPassword] = useState('')
 
+    const navigate = useNavigate()
+
     const login = (e) => {
         e.preventDefault()
         getAccessToken(mail, password)
         .then(res => {
+            sessionStorage.setItem("TOKEN", res.token)
             setToken(res.token)
+            navigate("/")
         })
     }
 
