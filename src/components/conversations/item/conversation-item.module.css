@@ -1,0 +1,28 @@
+.item {
+    display: flex;
+    padding: 10px;
+}
+
+.item:hover {
+    background-color:rgba(128, 128, 128, 0.534) ;
+    cursor: pointer;
+}
+.activeItem {
+    background-color:rgba(128, 128, 128, 0.534) ;
+}
+.portrait 
+{
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+.lastMessage 
+{
+    color: gray;
+    font-style: italic;
+}

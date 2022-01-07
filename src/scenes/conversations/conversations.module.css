@@ -1,0 +1,71 @@
+.container 
+{
+    display: flex;
+}
+
+.conversationWrapper 
+{
+    width: 30%;
+    border-right: 2px solid rgba(128, 128, 128, 0.534);
+    height: 100vh;
+}
+
+.searchInput {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+}
+
+.searchInput input
+{
+    padding: 5px 10px;
+    background-color: rgba(128, 128, 128, 0.2);
+    border-radius: 3px;
+}
+
+.chatPart 
+{
+    width: 70%;
+    height: 100vh;
+}
+
+.chatHeader 
+{
+    border-bottom: 2px solid rgba(128, 128, 128, 0.534);
+    height: 8vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatHeaderTitle
+{
+    font-weight: bold;
+}
+
+.chatBody
+{
+    height: 80vh;
+    width: 100%;
+}
+
+.chatForm 
+{
+    border-top: 2px solid rgba(128, 128, 128, 0.534);
+    display: flex;
+    padding: 10px;
+}
+
+.chatForm input {
+    flex: 1;
+}
+
+.chatButton {
+    background-color: #538CE8;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+}

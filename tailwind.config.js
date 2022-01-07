@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-      "./src/components/cards/login-card/login-card.js"
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {},
