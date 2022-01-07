@@ -2,9 +2,7 @@ import axios from "axios";
 import { API_URL } from "../config";
 
 function formateConversation(conversation, user) {
-    console.log({user});
     const users = conversation.users.filter(u => u._id !== user._id)
-    console.log({users});
     conversation.name = conversation.name || (users.length > 0 && users[0].username)
     return conversation
 }
@@ -30,8 +28,7 @@ export function createConversation(token, user, connectedUser) {
         .then(res => formateConversation(res.data.conversation, connectedUser))
 }
 
-export function deleteConversation(token, conv)
-{
+export function deleteConversation(token, conv) {
     const config = {
         headers: { Authorization: `Bearer ${token}` }
     };
