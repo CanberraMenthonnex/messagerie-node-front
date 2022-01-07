@@ -16,7 +16,6 @@ function App() {
     setToken(token)
     getUserProfile(token)
     .then((data) => {
-      console.log(data);
       setUser(data.user)
     })
   }

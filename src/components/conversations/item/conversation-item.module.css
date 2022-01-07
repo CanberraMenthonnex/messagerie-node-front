@@ -7,6 +7,9 @@
     background-color:rgba(128, 128, 128, 0.534) ;
     cursor: pointer;
 }
+.item:hover .trashWrapper > svg {
+    opacity: 1;
+}
 .activeItem {
     background-color:rgba(128, 128, 128, 0.534) ;
 }
@@ -25,4 +28,15 @@
 {
     color: gray;
     font-style: italic;
+}
+
+.trashWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.trashWrapper > svg {
+    width:30px;
+    opacity: 0;
 }

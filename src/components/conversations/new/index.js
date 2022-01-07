@@ -1,6 +1,6 @@
 import styles from "./new-conversation.module.css"
 
-export function NewConversationModal({ username, setUsername, users, onClickUser }) {
+export function NewConversationModal({ username, setUsername, users, onClickUser, onClose }) {
     return (
         <div className="flex items-center justify-center fixed left-0 bottom-0 w-full h-full bg-gray-800">
             <div className="bg-white rounded-lg w-1/2">
@@ -23,7 +23,7 @@ export function NewConversationModal({ username, setUsername, users, onClickUser
                     <ul className={styles.userItemList}>
                             {
                                 users.map(user => (
-                                    <li className={styles.userItem} onClick={() => onClickUser(user)}>
+                                    <li key={user._id} className={styles.userItem} onClick={() => onClickUser(user)}>
                                         <div className={styles.portrait}>{user.username[0]}</div>
                                         <h5>{user.username}</h5>
                                     </li>
@@ -32,10 +32,7 @@ export function NewConversationModal({ username, setUsername, users, onClickUser
                         </ul>
                     <hr />
                     <div className="ml-auto">
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Agree
-                        </button>
-                        <button className="bg-transparent hover:bg-gray-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                        <button onClick={onClose} className="bg-transparent hover:bg-gray-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                             Close
                         </button>
                     </div>

@@ -1,0 +1,7 @@
+.alert-wrapper 
+{
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+}
